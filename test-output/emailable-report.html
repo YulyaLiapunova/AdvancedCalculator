@@ -1,0 +1,797 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG Report</title>
+<style type="text/css">
+table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}
+td,th {border:1px solid #009;padding:.25em .5em}
+.result th {vertical-align:bottom}
+.param th {padding-left:1em;padding-right:1em}
+.param td {padding-left:.5em;padding-right:2em}
+.stripe td,.stripe th {background-color: #E6EBF9}
+.numi,.numi_attn {text-align:right}
+.total td {font-weight:bold}
+.passedodd td {background-color: #0A0}
+.passedeven td {background-color: #3F3}
+.skippedodd td {background-color: #CCC}
+.skippedodd td {background-color: #DDD}
+.failedodd td,.numi_attn {background-color: #F33}
+.failedeven td,.stripe .numi_attn {background-color: #D00}
+.stacktrace {white-space:pre;font-family:monospace}
+.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}
+</style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="testOverview">
+<tr><th>Test</th><th>Methods<br/>Passed</th><th>Scenarios<br/>Passed</th><th># skipped</th><th># failed</th><th>Total<br/>Time</th><th>Included<br/>Groups</th><th>Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t1">AdvancedCalculatorV2 Tests</a></td><td class="numi">76</td><td class="numi">76</td><td class="numi">0</td><td class="numi">0</td><td class="numi">0.1 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="methodOverview" id="summary">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr id="t1"><th colspan="5">AdvancedCalculatorV2 Tests &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="76">AdvancedCalculatorV2Test</td><td><a href="#m1"><b>testDivideOverflow</b>  </a></td><td class="numi">1</td><td>1698363081670</td><td class="numi">0</td></tr><tr class="passedodd"><td><a href="#m2"><b>testAddition</b>  </a></td><td class="numi">9</td><td>1698363081670</td><td class="numi">27</td></tr><tr class="passedodd"><td><a href="#m3"><b>testExceptionOnAddition</b>  </a></td><td class="numi">4</td><td>1698363081670</td><td class="numi">11</td></tr><tr class="passedodd"><td><a href="#m4"><b>testDivisionByZero</b>  </a></td><td class="numi">1</td><td>1698363081670</td><td class="numi">2</td></tr><tr class="passedodd"><td><a href="#m5"><b>testFactorial</b>  </a></td><td class="numi">4</td><td>1698363081670</td><td class="numi">20</td></tr><tr class="passedodd"><td><a href="#m6"><b>testFactorialOfNegativeNumber</b>  </a></td><td class="numi">1</td><td>1698363081672</td><td class="numi">1</td></tr><tr class="passedodd"><td><a href="#m7"><b>testFactorialOfVeryLargeNumber</b>  </a></td><td class="numi">1</td><td>1698363081673</td><td class="numi">0</td></tr><tr class="passedodd"><td><a href="#m8"><b>testExceptionOnMultiplication</b>  </a></td><td class="numi">2</td><td>1698363081670</td><td class="numi">9</td></tr><tr class="passedodd"><td><a href="#m9"><b>testDivision</b>  </a></td><td class="numi">7</td><td>1698363081674</td><td class="numi">21</td></tr><tr class="passedodd"><td><a href="#m10"><b>testExceptionOnSubtraction</b>  </a></td><td class="numi">3</td><td>1698363081674</td><td class="numi">6</td></tr><tr class="passedodd"><td><a href="#m11"><b>testLog</b>  </a></td><td class="numi">3</td><td>1698363081675</td><td class="numi">16</td></tr><tr class="passedodd"><td><a href="#m12"><b>testLogComparison</b>  </a></td><td class="numi">2</td><td>1698363081676</td><td class="numi">11</td></tr><tr class="passedodd"><td><a href="#m13"><b>testExceptionOnAddition</b>  </a></td><td class="numi">4</td><td>1698363081670</td><td class="numi">11</td></tr><tr class="passedodd"><td><a href="#m14"><b>testExceptionOnMultiplication</b>  </a></td><td class="numi">2</td><td>1698363081670</td><td class="numi">9</td></tr><tr class="passedodd"><td><a href="#m15"><b>testExceptionOnSubtraction</b>  </a></td><td class="numi">3</td><td>1698363081674</td><td class="numi">6</td></tr><tr class="passedodd"><td><a href="#m16"><b>testLogExceptions</b>  </a></td><td class="numi">2</td><td>1698363081679</td><td class="numi">9</td></tr><tr class="passedodd"><td><a href="#m17"><b>testExceptionOnAddition</b>  </a></td><td class="numi">4</td><td>1698363081670</td><td class="numi">11</td></tr><tr class="passedodd"><td><a href="#m18"><b>testExceptionOnSubtraction</b>  </a></td><td class="numi">3</td><td>1698363081674</td><td class="numi">6</td></tr><tr class="passedodd"><td><a href="#m19"><b>testExceptionOnAddition</b>  </a></td><td class="numi">4</td><td>1698363081670</td><td class="numi">11</td></tr><tr class="passedodd"><td><a href="#m20"><b>testMultiplication</b>  </a></td><td class="numi">7</td><td>1698363081681</td><td class="numi">15</td></tr><tr class="passedodd"><td><a href="#m21"><b>testPower</b>  </a></td><td class="numi">9</td><td>1698363081682</td><td class="numi">16</td></tr><tr class="passedodd"><td><a href="#m22"><b>testAddition</b>  </a></td><td class="numi">9</td><td>1698363081670</td><td class="numi">27</td></tr><tr class="passedodd"><td><a href="#m23"><b>testDivision</b>  </a></td><td class="numi">7</td><td>1698363081674</td><td class="numi">21</td></tr><tr class="passedodd"><td><a href="#m24"><b>testFactorial</b>  </a></td><td class="numi">4</td><td>1698363081670</td><td class="numi">20</td></tr><tr class="passedodd"><td><a href="#m25"><b>testAddition</b>  </a></td><td class="numi">9</td><td>1698363081670</td><td class="numi">27</td></tr><tr class="passedodd"><td><a href="#m26"><b>testMultiplication</b>  </a></td><td class="numi">7</td><td>1698363081681</td><td class="numi">15</td></tr><tr class="passedodd"><td><a href="#m27"><b>testPower</b>  </a></td><td class="numi">9</td><td>1698363081682</td><td class="numi">16</td></tr><tr class="passedodd"><td><a href="#m28"><b>testDivision</b>  </a></td><td class="numi">7</td><td>1698363081674</td><td class="numi">21</td></tr><tr class="passedodd"><td><a href="#m29"><b>testLogComparison</b>  </a></td><td class="numi">2</td><td>1698363081676</td><td class="numi">11</td></tr><tr class="passedodd"><td><a href="#m30"><b>testPower</b>  </a></td><td class="numi">9</td><td>1698363081682</td><td class="numi">16</td></tr><tr class="passedodd"><td><a href="#m31"><b>testFactorial</b>  </a></td><td class="numi">4</td><td>1698363081670</td><td class="numi">20</td></tr><tr class="passedodd"><td><a href="#m32"><b>testAddition</b>  </a></td><td class="numi">9</td><td>1698363081670</td><td class="numi">27</td></tr><tr class="passedodd"><td><a href="#m33"><b>testMultiplication</b>  </a></td><td class="numi">7</td><td>1698363081681</td><td class="numi">15</td></tr><tr class="passedodd"><td><a href="#m34"><b>testLogExceptions</b>  </a></td><td class="numi">2</td><td>1698363081679</td><td class="numi">9</td></tr><tr class="passedodd"><td><a href="#m35"><b>testLog</b>  </a></td><td class="numi">3</td><td>1698363081675</td><td class="numi">16</td></tr><tr class="passedodd"><td><a href="#m36"><b>testDivision</b>  </a></td><td class="numi">7</td><td>1698363081674</td><td class="numi">21</td></tr><tr class="passedodd"><td><a href="#m37"><b>testPowerInvalidOperation</b>  </a></td><td class="numi">1</td><td>1698363081688</td><td class="numi">1</td></tr><tr class="passedodd"><td><a href="#m38"><b>testDivision</b>  </a></td><td class="numi">7</td><td>1698363081674</td><td class="numi">21</td></tr><tr class="passedodd"><td><a href="#m39"><b>testAddition</b>  </a></td><td class="numi">9</td><td>1698363081670</td><td class="numi">27</td></tr><tr class="passedodd"><td><a href="#m40"><b>testFactorial</b>  </a></td><td class="numi">4</td><td>1698363081670</td><td class="numi">20</td></tr><tr class="passedodd"><td><a href="#m41"><b>testMultiplication</b>  </a></td><td class="numi">7</td><td>1698363081681</td><td class="numi">15</td></tr><tr class="passedodd"><td><a href="#m42"><b>testLog</b>  </a></td><td class="numi">3</td><td>1698363081675</td><td class="numi">16</td></tr><tr class="passedodd"><td><a href="#m43"><b>testPower</b>  </a></td><td class="numi">9</td><td>1698363081682</td><td class="numi">16</td></tr><tr class="passedodd"><td><a href="#m44"><b>testPowerOverflow</b>  </a></td><td class="numi">1</td><td>1698363081690</td><td class="numi">1</td></tr><tr class="passedodd"><td><a href="#m45"><b>testDivision</b>  </a></td><td class="numi">7</td><td>1698363081674</td><td class="numi">21</td></tr><tr class="passedodd"><td><a href="#m46"><b>testSqrt</b>  </a></td><td class="numi">6</td><td>1698363081691</td><td class="numi">10</td></tr><tr class="passedodd"><td><a href="#m47"><b>testPower</b>  </a></td><td class="numi">9</td><td>1698363081682</td><td class="numi">16</td></tr><tr class="passedodd"><td><a href="#m48"><b>testAddition</b>  </a></td><td class="numi">9</td><td>1698363081670</td><td class="numi">27</td></tr><tr class="passedodd"><td><a href="#m49"><b>testMultiplication</b>  </a></td><td class="numi">7</td><td>1698363081681</td><td class="numi">15</td></tr><tr class="passedodd"><td><a href="#m50"><b>testSqrtNegativeNumber</b>  </a></td><td class="numi">1</td><td>1698363081692</td><td class="numi">0</td></tr><tr class="passedodd"><td><a href="#m51"><b>testSubtractionWithNaN</b>  </a></td><td class="numi">1</td><td>1698363081692</td><td class="numi">1</td></tr><tr class="passedodd"><td><a href="#m52"><b>testSubtraction</b>  </a></td><td class="numi">10</td><td>1698363081692</td><td class="numi">8</td></tr><tr class="passedodd"><td><a href="#m53"><b>testPower</b>  </a></td><td class="numi">9</td><td>1698363081682</td><td class="numi">16</td></tr><tr class="passedodd"><td><a href="#m54"><b>testSqrt</b>  </a></td><td class="numi">6</td><td>1698363081691</td><td class="numi">10</td></tr><tr class="passedodd"><td><a href="#m55"><b>testMultiplication</b>  </a></td><td class="numi">7</td><td>1698363081681</td><td class="numi">15</td></tr><tr class="passedodd"><td><a href="#m56"><b>testAddition</b>  </a></td><td class="numi">9</td><td>1698363081670</td><td class="numi">27</td></tr><tr class="passedodd"><td><a href="#m57"><b>testSubtraction</b>  </a></td><td class="numi">10</td><td>1698363081692</td><td class="numi">8</td></tr><tr class="passedodd"><td><a href="#m58"><b>testDivision</b>  </a></td><td class="numi">7</td><td>1698363081674</td><td class="numi">21</td></tr><tr class="passedodd"><td><a href="#m59"><b>testAddition</b>  </a></td><td class="numi">9</td><td>1698363081670</td><td class="numi">27</td></tr><tr class="passedodd"><td><a href="#m60"><b>testPower</b>  </a></td><td class="numi">9</td><td>1698363081682</td><td class="numi">16</td></tr><tr class="passedodd"><td><a href="#m61"><b>testSubtraction</b>  </a></td><td class="numi">10</td><td>1698363081692</td><td class="numi">8</td></tr><tr class="passedodd"><td><a href="#m62"><b>testMultiplication</b>  </a></td><td class="numi">7</td><td>1698363081681</td><td class="numi">15</td></tr><tr class="passedodd"><td><a href="#m63"><b>testSqrt</b>  </a></td><td class="numi">6</td><td>1698363081691</td><td class="numi">10</td></tr><tr class="passedodd"><td><a href="#m64"><b>testPower</b>  </a></td><td class="numi">9</td><td>1698363081682</td><td class="numi">16</td></tr><tr class="passedodd"><td><a href="#m65"><b>testAddition</b>  </a></td><td class="numi">9</td><td>1698363081670</td><td class="numi">27</td></tr><tr class="passedodd"><td><a href="#m66"><b>testSubtraction</b>  </a></td><td class="numi">10</td><td>1698363081692</td><td class="numi">8</td></tr><tr class="passedodd"><td><a href="#m67"><b>testSqrt</b>  </a></td><td class="numi">6</td><td>1698363081691</td><td class="numi">10</td></tr><tr class="passedodd"><td><a href="#m68"><b>testPower</b>  </a></td><td class="numi">9</td><td>1698363081682</td><td class="numi">16</td></tr><tr class="passedodd"><td><a href="#m69"><b>testSubtraction</b>  </a></td><td class="numi">10</td><td>1698363081692</td><td class="numi">8</td></tr><tr class="passedodd"><td><a href="#m70"><b>testSubtraction</b>  </a></td><td class="numi">10</td><td>1698363081692</td><td class="numi">8</td></tr><tr class="passedodd"><td><a href="#m71"><b>testSubtraction</b>  </a></td><td class="numi">10</td><td>1698363081692</td><td class="numi">8</td></tr><tr class="passedodd"><td><a href="#m72"><b>testSubtraction</b>  </a></td><td class="numi">10</td><td>1698363081692</td><td class="numi">8</td></tr><tr class="passedodd"><td><a href="#m73"><b>testSqrt</b>  </a></td><td class="numi">6</td><td>1698363081691</td><td class="numi">10</td></tr><tr class="passedodd"><td><a href="#m74"><b>testSubtraction</b>  </a></td><td class="numi">10</td><td>1698363081692</td><td class="numi">8</td></tr><tr class="passedodd"><td><a href="#m75"><b>testSubtraction</b>  </a></td><td class="numi">10</td><td>1698363081692</td><td class="numi">8</td></tr><tr class="passedodd"><td><a href="#m76"><b>testSqrt</b>  </a></td><td class="numi">6</td><td>1698363081691</td><td class="numi">10</td></tr>
+</table>
+<h1>AdvancedCalculatorV2 Tests</h1>
+<h2 id="m1">AdvancedCalculatorV2Test:testFactorialOfVeryLargeNumber</h2>
+<div>
+<div class="stacktrace">java.lang.ArithmeticException: Factorial value is too large
+	at main.java.AdvancedCalculator.factorial(AdvancedCalculator.java:76)
+	at AdvancedCalculatorV2Test.testFactorialOfVeryLargeNumber(AdvancedCalculatorV2Test.java:269)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">AdvancedCalculatorV2Test:testSqrt</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>2.25</td>
+<td>1.5</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">AdvancedCalculatorV2Test:testAddition</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>8.988465674311579E307</td>
+<td>8.988465674311579E307</td>
+<td>1.7976931348623157E308</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">AdvancedCalculatorV2Test:testAddition</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>-5</td>
+<td>-3</td>
+<td>-8.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m5">AdvancedCalculatorV2Test:testDivision</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>6</td>
+<td>-3</td>
+<td>-2.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m6">AdvancedCalculatorV2Test:testMultiplication</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>5.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m7">AdvancedCalculatorV2Test:testAddition</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>5</td>
+<td>-3</td>
+<td>2.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m8">AdvancedCalculatorV2Test:testLogExceptions</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th></tr>
+<tr class="param stripe"><td>-5.0</td>
+</tr>
+<tr><td>
+<div class="stacktrace">java.lang.ArithmeticException: Logarithm of non-positive values is not defined
+	at main.java.AdvancedCalculator.log(AdvancedCalculator.java:88)
+	at AdvancedCalculatorV2Test.testLogExceptions(AdvancedCalculatorV2Test.java:298)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m9">AdvancedCalculatorV2Test:testFactorial</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>5</td>
+<td>120.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m10">AdvancedCalculatorV2Test:testExceptionOnAddition</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>1.7976931348623157E308</td>
+<td>1.0</td>
+</tr>
+<tr><td colspan="2">
+<div class="stacktrace">java.lang.ArithmeticException: Overflow in add
+	at main.java.AdvancedCalculator.add(AdvancedCalculator.java:8)
+	at AdvancedCalculatorV2Test.testExceptionOnAddition(AdvancedCalculatorV2Test.java:71)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m11">AdvancedCalculatorV2Test:testAddition</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>-Infinity</td>
+<td>5</td>
+<td>-Infinity</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m12">AdvancedCalculatorV2Test:testPower</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>5</td>
+<td>0</td>
+<td>1.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m13">AdvancedCalculatorV2Test:testSqrt</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>1.0E-6</td>
+<td>0.001</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m14">AdvancedCalculatorV2Test:testSqrt</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>0</td>
+<td>0.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m15">AdvancedCalculatorV2Test:testLogComparison</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>1.0E10</td>
+<td>true</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m16">AdvancedCalculatorV2Test:testLog</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>0.5</td>
+<td>-0.693147</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m17">AdvancedCalculatorV2Test:testDivideOverflow</h2>
+<div>
+<div class="stacktrace">java.lang.ArithmeticException: Overflow or invalid operation in divide
+	at main.java.AdvancedCalculator.divide(AdvancedCalculator.java:47)
+	at AdvancedCalculatorV2Test.testDivideOverflow(AdvancedCalculatorV2Test.java:178)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m18">AdvancedCalculatorV2Test:testAddition</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>4.9E-324</td>
+<td>4.9E-324</td>
+<td>1.0E-323</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m19">AdvancedCalculatorV2Test:testLog</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>2.718281828459045</td>
+<td>1.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m20">AdvancedCalculatorV2Test:testMultiplication</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>0.0</td>
+<td>5.0</td>
+<td>0.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m21">AdvancedCalculatorV2Test:testSubtractionWithNaN</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m22">AdvancedCalculatorV2Test:testSubtraction</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>5</td>
+<td>-3</td>
+<td>8.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m23">AdvancedCalculatorV2Test:testSubtraction</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>1.7976931348623157E308</td>
+<td>8.988465674311579E307</td>
+<td>8.988465674311579E307</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m24">AdvancedCalculatorV2Test:testSubtraction</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>5.5</td>
+<td>3.3</td>
+<td>2.2</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m25">AdvancedCalculatorV2Test:testDivision</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>0</td>
+<td>3</td>
+<td>0.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m26">AdvancedCalculatorV2Test:testDivision</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>5.5</td>
+<td>2.0</td>
+<td>2.75</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m27">AdvancedCalculatorV2Test:testMultiplication</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>5.5</td>
+<td>2.0</td>
+<td>11.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m28">AdvancedCalculatorV2Test:testSubtraction</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>1.0E-323</td>
+<td>4.9E-324</td>
+<td>4.9E-324</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m29">AdvancedCalculatorV2Test:testSubtraction</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>Infinity</td>
+<td>5</td>
+<td>Infinity</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m30">AdvancedCalculatorV2Test:testPower</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>5</td>
+<td>1</td>
+<td>5.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m31">AdvancedCalculatorV2Test:testExceptionOnAddition</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>-1.7976931348623157E308</td>
+<td>-1.0</td>
+</tr>
+<tr><td colspan="2">
+<div class="stacktrace">java.lang.ArithmeticException: Overflow in add
+	at main.java.AdvancedCalculator.add(AdvancedCalculator.java:8)
+	at AdvancedCalculatorV2Test.testExceptionOnAddition(AdvancedCalculatorV2Test.java:71)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m32">AdvancedCalculatorV2Test:testPowerInvalidOperation</h2>
+<div>
+<div class="stacktrace">java.lang.ArithmeticException: Invalid operation in power
+	at main.java.AdvancedCalculator.power(AdvancedCalculator.java:60)
+	at AdvancedCalculatorV2Test.testPowerInvalidOperation(AdvancedCalculatorV2Test.java:216)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m33">AdvancedCalculatorV2Test:testDivision</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>6</td>
+<td>3</td>
+<td>2.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m34">AdvancedCalculatorV2Test:testAddition</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>2</td>
+<td>3</td>
+<td>5.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m35">AdvancedCalculatorV2Test:testDivision</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>-6</td>
+<td>-3</td>
+<td>2.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m36">AdvancedCalculatorV2Test:testLogExceptions</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th></tr>
+<tr class="param stripe"><td>0.0</td>
+</tr>
+<tr><td>
+<div class="stacktrace">java.lang.ArithmeticException: Logarithm of non-positive values is not defined
+	at main.java.AdvancedCalculator.log(AdvancedCalculator.java:88)
+	at AdvancedCalculatorV2Test.testLogExceptions(AdvancedCalculatorV2Test.java:298)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m37">AdvancedCalculatorV2Test:testDivisionByZero</h2>
+<div>
+<div class="stacktrace">java.lang.ArithmeticException: Division by zero is not allowed
+	at main.java.AdvancedCalculator.divide(AdvancedCalculator.java:40)
+	at AdvancedCalculatorV2Test.testDivisionByZero(AdvancedCalculatorV2Test.java:172)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m38">AdvancedCalculatorV2Test:testMultiplication</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>0.0</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m39">AdvancedCalculatorV2Test:testSqrt</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>1</td>
+<td>1.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m40">AdvancedCalculatorV2Test:testPower</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>1</td>
+<td>100</td>
+<td>1.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m41">AdvancedCalculatorV2Test:testExceptionOnSubtraction</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>1.7976931348623157E308</td>
+<td>-1.0</td>
+</tr>
+<tr><td colspan="2">
+<div class="stacktrace">java.lang.ArithmeticException: Overflow in subtract
+	at main.java.AdvancedCalculator.subtract(AdvancedCalculator.java:18)
+	at AdvancedCalculatorV2Test.testExceptionOnSubtraction(AdvancedCalculatorV2Test.java:114)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m42">AdvancedCalculatorV2Test:testSqrt</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>4</td>
+<td>2.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m43">AdvancedCalculatorV2Test:testMultiplication</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>2</td>
+<td>3</td>
+<td>6.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m44">AdvancedCalculatorV2Test:testExceptionOnSubtraction</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>-Infinity</td>
+<td>5</td>
+</tr>
+<tr><td colspan="2">
+<div class="stacktrace">java.lang.ArithmeticException: Overflow in subtract
+	at main.java.AdvancedCalculator.subtract(AdvancedCalculator.java:18)
+	at AdvancedCalculatorV2Test.testExceptionOnSubtraction(AdvancedCalculatorV2Test.java:114)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m45">AdvancedCalculatorV2Test:testPower</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>0</td>
+<td>3</td>
+<td>0.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m46">AdvancedCalculatorV2Test:testSubtraction</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>5</td>
+<td>0</td>
+<td>5.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m47">AdvancedCalculatorV2Test:testPowerOverflow</h2>
+<div>
+<div class="stacktrace">java.lang.ArithmeticException: Overflow in power operation
+	at main.java.AdvancedCalculator.power(AdvancedCalculator.java:57)
+	at AdvancedCalculatorV2Test.testPowerOverflow(AdvancedCalculatorV2Test.java:208)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m48">AdvancedCalculatorV2Test:testAddition</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>5.5</td>
+<td>3.3</td>
+<td>8.8</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m49">AdvancedCalculatorV2Test:testLog</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>1.0</td>
+<td>0.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m50">AdvancedCalculatorV2Test:testPower</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>-2</td>
+<td>3</td>
+<td>-8.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m51">AdvancedCalculatorV2Test:testFactorialOfNegativeNumber</h2>
+<div>
+<div class="stacktrace">java.lang.IllegalArgumentException: Factorial of negative numbers is not defined
+	at main.java.AdvancedCalculator.factorial(AdvancedCalculator.java:74)
+	at AdvancedCalculatorV2Test.testFactorialOfNegativeNumber(AdvancedCalculatorV2Test.java:263)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m52">AdvancedCalculatorV2Test:testSqrt</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>1.0E10</td>
+<td>100000.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m53">AdvancedCalculatorV2Test:testSqrtNegativeNumber</h2>
+<div>
+<div class="stacktrace">java.lang.ArithmeticException: Cannot calculate the square root of a negative number
+	at main.java.AdvancedCalculator.sqrt(AdvancedCalculator.java:67)
+	at AdvancedCalculatorV2Test.testSqrtNegativeNumber(AdvancedCalculatorV2Test.java:241)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m54">AdvancedCalculatorV2Test:testPower</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>2</td>
+<td>3</td>
+<td>8.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m55">AdvancedCalculatorV2Test:testFactorial</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>1</td>
+<td>1.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m56">AdvancedCalculatorV2Test:testSubtraction</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>5</td>
+<td>3</td>
+<td>2.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m57">AdvancedCalculatorV2Test:testExceptionOnMultiplication</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>-1.7976931348623157E308</td>
+<td>2.0</td>
+</tr>
+<tr><td colspan="2">
+<div class="stacktrace">java.lang.ArithmeticException: Overflow in multiply
+	at main.java.AdvancedCalculator.multiply(AdvancedCalculator.java:32)
+	at AdvancedCalculatorV2Test.testExceptionOnMultiplication(AdvancedCalculatorV2Test.java:147)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m58">AdvancedCalculatorV2Test:testAddition</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>5</td>
+<td>0</td>
+<td>5.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m59">AdvancedCalculatorV2Test:testMultiplication</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>5</td>
+<td>-3</td>
+<td>-15.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m60">AdvancedCalculatorV2Test:testPower</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>2</td>
+<td>-3</td>
+<td>0.125</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m61">AdvancedCalculatorV2Test:testFactorial</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>20</td>
+<td>2.43290200817664E18</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m62">AdvancedCalculatorV2Test:testLogComparison</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>1.0E-6</td>
+<td>false</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m63">AdvancedCalculatorV2Test:testPower</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>-2</td>
+<td>-3</td>
+<td>-0.125</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m64">AdvancedCalculatorV2Test:testSubtraction</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>-5</td>
+<td>-3</td>
+<td>-2.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m65">AdvancedCalculatorV2Test:testDivision</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>-6</td>
+<td>3</td>
+<td>-2.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m66">AdvancedCalculatorV2Test:testAddition</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>NaN</td>
+<td>5</td>
+<td>NaN</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m67">AdvancedCalculatorV2Test:testSubtraction</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>-5</td>
+<td>3</td>
+<td>-8.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m68">AdvancedCalculatorV2Test:testSubtraction</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>0</td>
+<td>3</td>
+<td>-3.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m69">AdvancedCalculatorV2Test:testExceptionOnAddition</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>Infinity</td>
+<td>5</td>
+</tr>
+<tr><td colspan="2">
+<div class="stacktrace">java.lang.ArithmeticException: Overflow in add
+	at main.java.AdvancedCalculator.add(AdvancedCalculator.java:8)
+	at AdvancedCalculatorV2Test.testExceptionOnAddition(AdvancedCalculatorV2Test.java:71)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m70">AdvancedCalculatorV2Test:testFactorial</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>0</td>
+<td>1.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m71">AdvancedCalculatorV2Test:testDivision</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>1</td>
+<td>1000000</td>
+<td>1.0E-6</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m72">AdvancedCalculatorV2Test:testPower</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>1.0E150</td>
+<td>2</td>
+<td>1.0E300</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m73">AdvancedCalculatorV2Test:testExceptionOnMultiplication</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>1.7976931348623157E308</td>
+<td>2.0</td>
+</tr>
+<tr><td colspan="2">
+<div class="stacktrace">java.lang.ArithmeticException: Overflow in multiply
+	at main.java.AdvancedCalculator.multiply(AdvancedCalculator.java:32)
+	at AdvancedCalculatorV2Test.testExceptionOnMultiplication(AdvancedCalculatorV2Test.java:147)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m74">AdvancedCalculatorV2Test:testExceptionOnSubtraction</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>-1.7976931348623157E308</td>
+<td>1.0</td>
+</tr>
+<tr><td colspan="2">
+<div class="stacktrace">java.lang.ArithmeticException: Overflow in subtract
+	at main.java.AdvancedCalculator.subtract(AdvancedCalculator.java:18)
+	at AdvancedCalculatorV2Test.testExceptionOnSubtraction(AdvancedCalculatorV2Test.java:114)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m75">AdvancedCalculatorV2Test:testExceptionOnAddition</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr>
+<tr class="param stripe"><td>1.0E10</td>
+<td>1.0E-10</td>
+</tr>
+<tr><td colspan="2">
+<div class="stacktrace">java.lang.ArithmeticException: Overflow in add
+	at main.java.AdvancedCalculator.add(AdvancedCalculator.java:8)
+	at AdvancedCalculatorV2Test.testExceptionOnAddition(AdvancedCalculatorV2Test.java:71)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 8 stack frames</div>
+</td></tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m76">AdvancedCalculatorV2Test:testMultiplication</h2>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th></tr>
+<tr class="param stripe"><td>-5</td>
+<td>-3</td>
+<td>15.0</td>
+</tr>
+</table>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>
