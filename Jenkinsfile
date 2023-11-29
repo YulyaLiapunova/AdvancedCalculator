@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         // Определение переменных среды, используемых во всем пайплайне
-        MAVEN_HOME = '/path/to/maven'
-        JAVA_HOME = '/path/to/java'
+        MAVEN_HOME = '/usr/share/apache-maven'
+        JAVA_HOME = '/usr/lib/jvm/java-11-amazon-corretto.x86_64'
     }
 
     stages {
