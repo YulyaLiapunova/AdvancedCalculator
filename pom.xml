@@ -27,4 +27,25 @@
         <maven.compiler.target>18</maven.compiler.target>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>profile-name</id>
+            <!--properties>
+                <!- Свойства профиля -->
+            <!--/properties>
+            <dependencies>
+                <!- Зависимости профиля -->
+            <!--/dependencies>
+            <build>
+                <plugins>
+                    <!- Плагины профиля -->
+                <!--/plugins>
+            </build>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+                <!- Другие условия активации -->
+            <!--/activation-->
+        </profile>
+    </profiles>
+
 </project>
