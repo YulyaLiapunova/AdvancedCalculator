@@ -16,8 +16,8 @@ pipeline {
                 echo 'Очистка рабочего пространства...'
                 cleanWs() // Очистка workspace перед началом работы
 
-                echo 'Подготовка конфигурационных файлов...'
-                sh 'cp -r ./config $WORKSPACE/config'
+                //echo 'Подготовка конфигурационных файлов...'
+                //sh 'cp -r ./config $WORKSPACE/config'
 
                 echo 'Установка зависимостей...'
                 sh '${MAVEN_HOME}/bin/mvn -Pprofile-name clean dependency:resolve'
