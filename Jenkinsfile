@@ -1,50 +1,80 @@
 pipeline {
-    agent any
+    agent any // Пайплайн может запускаться на любом доступном агенте
+
+    environment {
+        // Определение переменных среды, используемых во всем пайплайне
+        MAVEN_HOME = '/path/to/maven'
+        JAVA_HOME = '/path/to/java'
+    }
+
     stages {
         stage('Инициализация') {
             steps {
-                // Получение кода из репозитория (если Jenkins не настроен на автоматическое получение кода)
-                checkout scm
+                echo 'Проверка версии Java...'
+                sh '${JAVA_HOME}/bin/java -version'
 
-                // Установка зависимостей с помощью Maven
-                script {
-                    // Определяем переменные среды или другие параметры, если это необходимо
-                    // Например: env.PATH = "$PATH:/path/to/maven/bin"
+                echo 'Очистка рабочего пространства...'
+                cleanWs() // Очистка workspace перед началом работы
 
-                    // Выполнение Maven для установки зависимостей
-                    sh 'mvn clean dependency:resolve'
-                }
+                echo 'Подготовка конфигурационных файлов...'
+                sh 'cp -r ./config $WORKSPACE/config'
+
+                echo 'Установка зависимостей...'
+                sh '${MAVEN_HOME}/bin/mvn -Pprofile-name clean dependency:resolve'
+
+                echo 'Информация о ветке и коммите...'
+                sh 'echo "Сборка запущена с коммита: ${GIT_COMMIT}"'
             }
         }
-        stage('Static Analysis') {
+
+        stage('Сборка') {
             steps {
-                echo 'Run the static analysis to the code'
+                echo 'Сборка приложения...'
+                sh '${MAVEN_HOME}/bin/mvn clean package'
             }
         }
-        stage('Compile') {
+
+        stage('Тестирование') {
             steps {
-                echo 'Compile the source code'
+                echo 'Запуск тестов...'
+                sh '${MAVEN_HOME}/bin/mvn test'
             }
         }
-        stage('Security Check') {
+
+        stage('Анализ кода') {
             steps {
-                echo 'Run the security check against the application'
+                echo 'Анализ качества кода...'
+                sh '${MAVEN_HOME}/bin/mvn sonar:sonar'
             }
         }
-        stage('Run Unit Tests') {
+
+        stage('Деплой') {
             steps {
-                echo 'Run unit tests from the source code'
+                echo 'Развертывание приложения...'
+                // Здесь может быть скрипт для деплоя или использование maven
+                sh '${MAVEN_HOME}/bin/mvn deploy'
             }
         }
-        stage('Run Integration Tests') {
-            steps {
-                echo 'Run only crucial integration tests from the source code'
-            }
+    }
+
+    post {
+        always {
+            echo 'Очистка после сборки...'
+            cleanWs() // Очистка workspace после завершения работы
         }
-        stage('Publish Artifacts') {
-            steps {
-                echo 'Save the assemblies generated from the compilation'
-            }
+
+        success {
+            echo 'Сборка успешно завершена.'
+        }
+
+        failure {
+            echo 'Сборка не удалась.'
+            // Здесь можно добавить уведомления или действия в случае неудачной сборки
+        }
+
+        unstable {
+            echo 'Сборка завершена, но с предупреждениями.'
+            // Действия для сборок, которые завершились, но имеют предупреждения (например, неудачные тесты)
         }
     }
 }
