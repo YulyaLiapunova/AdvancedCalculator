@@ -1,5 +1,7 @@
 package main.java;
 
+import java.util.Scanner;
+
 public class AdvancedCalculator {
     public double add(double a, double b) {
         double result = a + b;
@@ -88,5 +90,58 @@ public class AdvancedCalculator {
             throw new ArithmeticException("Logarithm of non-positive values is not defined");
         }
         return Math.log(value);
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        AdvancedCalculator calculator = new AdvancedCalculator();
+
+        while (true) {
+            System.out.println("Введите строку (для выхода введите 'exit'):");
+            String input = scanner.nextLine();
+
+            if ("exit".equalsIgnoreCase(input)) {
+                break;
+            }
+
+            String[] parts = input.split(" ");
+            if (parts.length == 3) {
+                try {
+                    String operation = parts[1];
+                    double num1 = Double.parseDouble(parts[0]);
+                    double num2 = Double.parseDouble(parts[2]);
+                    double result = 0.0;
+
+                    switch (operation.toLowerCase()) {
+                        case "+":
+                            result = calculator.add(num1, num2);
+                            break;
+                        case "-":
+                            result = calculator.subtract(num1, num2);
+                            break;
+                        case "*":
+                            result = calculator.subtract(num1, num2);
+                        case "/":
+                            result = calculator.subtract(num1, num2);
+                            break;
+                        case "^":
+                            result = calculator.subtract(num1, num2);
+                            break;
+                        default:
+                            System.out.println("Неизвестная операция.");
+                            continue;
+                    }
+
+                    System.out.println("Результат: " + result);
+                } catch (NumberFormatException e) {
+                    System.out.println("Ошибка при разборе чисел.");
+                }
+            } else {
+                System.out.println("Неверный формат ввода.");
+            }
+        }
+
+        scanner.close();
+        System.out.println("Программа завершена.");
     }
 }
