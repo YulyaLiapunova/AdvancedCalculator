@@ -31,20 +31,20 @@ pipeline {
         stage('Сборка') {
             steps {
                 echo 'Сборка приложения...'
-                sh '${MAVEN_HOME}/bin/mvn -f /var/lib/jenkins/workspace/Calc@tmp/pom.xml clean install'
+                sh '${MAVEN_HOME}/bin/mvn clean install -DskipTests'
             }
         }
 
         stage('Тестирование') {
             steps {
                 echo 'Запуск тестов...'
-                //sh '${MAVEN_HOME}/bin/mvn -f /var/lib/jenkins/workspace/Calc@tmp/pom.xml test'
+                //sh '${MAVEN_HOME}/bin/mvn test'
 
                 script {
                     if (env.BRANCH_NAME != 'main') {
                         PROFILE_NAME = 'AdvancedCalculatorJUnitTest'
                     }
-                    sh '${MAVEN_HOME}/bin/mvn -f /var/lib/jenkins/workspace/Calc@tmp/pom.xml test -P${PROFILE_NAME}'
+                    sh '${MAVEN_HOME}/bin/mvn test -P${PROFILE_NAME}'
                     //sh "mvn clean test -P${PROFILE_NAME}"
                 }
             }
