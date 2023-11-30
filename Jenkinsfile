@@ -74,6 +74,15 @@ pipeline {
                     }
         }
 
+        stage('Get SonarQube Data') {
+            steps {
+                script {
+                    def sonarData = sh(script: "curl -u 42c4b797b4d3139192c0f73db24c36a70b8a11aa: 'http://3.82.161.17:9000/api/measures/component?component=AdvancedCalculator&metricKeys=bugs,vulnerabilities,code_smells'", returnStdout: true).trim()
+                    // Обработайте sonarData для извлечения необходимой информации
+                }
+            }
+        }
+
     }
 
     post {
@@ -95,7 +104,9 @@ pipeline {
                     echo 'Сборка успешно завершена.'
                     def message = "Успешно: ${env.JOB_NAME} [${env.BUILD_NUMBER}] \n" +
                                                   "Ссылка: ${env.BUILD_URL} \n" +
-                                                  "Длительность: ${currentBuild.durationString}"
+                                                  "Длительность: ${currentBuild.durationString} \n" +
+                                                  "Результаты сборки: ${currentBuild.currentResult} \n" +
+                                                  "Анализ SonarQube: ${sonarData}"
                     sh "curl -s -X POST https://api.telegram.org/bot6791948017:AAE9Thrt41vGXMglNFmR9WZbJ2O9SNX-1dE/sendMessage -d chat_id=671562924 -d text='${message}'"
                 }
             }
