@@ -59,41 +59,32 @@ pipeline {
             }
         }
 
-
-        stage('Анализ кода') {
-            steps {
-                echo 'Анализ качества кода...'
-                sh '${MAVEN_HOME}/bin/mvn sonar:sonar'
-            }
-        }
-
-        stage('Деплой') {
-            steps {
-                echo 'Развертывание приложения...'
-                // Здесь может быть скрипт для деплоя или использование maven
-                sh '${MAVEN_HOME}/bin/mvn deploy'
-            }
-        }
     }
 
     post {
-        always {
-            echo 'Очистка после сборки...'
-            cleanWs() // Очистка workspace после завершения работы
-        }
 
-        success {
-            echo 'Сборка успешно завершена.'
-        }
+            always {
+                echo 'Очистка после сборки...'
+                cleanWs() // Очистка workspace после завершения работы
+            }
 
-        failure {
-            echo 'Сборка не удалась.'
-            // Здесь можно добавить уведомления или действия в случае неудачной сборки
+            success {
+                script {
+                    echo 'Сборка успешно завершена.'
+                    sh "curl -s -X POST https://api.telegram.org/bot6791948017:AAE9Thrt41vGXMglNFmR9WZbJ2O9SNX-1dE/sendMessage -d chat_id=671562924 -d text='Сборка успешно завершена: ${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+                }
+            }
+            failure {
+                script {
+                    echo 'Сборка не удалась.'
+                    sh "curl -s -X POST https://api.telegram.org/bot6791948017:AAE9Thrt41vGXMglNFmR9WZbJ2O9SNX-1dE/sendMessage -d chat_id=671562924 -d text='Ошибка сборки: ${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+                }
+            }
+            unstable {
+                script {
+                    echo 'Сборка завершена, но с предупреждениями.'
+                    sh "curl -s -X POST https://api.telegram.org/bot6791948017:AAE9Thrt41vGXMglNFmR9WZbJ2O9SNX-1dE/sendMessage -d chat_id=671562924 -d text='Сборка завершена, но с предупреждениями: ${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+                }
+            }
         }
-
-        unstable {
-            echo 'Сборка завершена, но с предупреждениями.'
-            // Действия для сборок, которые завершились, но имеют предупреждения (например, неудачные тесты)
-        }
-    }
 }
