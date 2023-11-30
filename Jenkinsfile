@@ -1,6 +1,12 @@
 pipeline {
     agent any // Пайплайн может запускаться на любом доступном агенте
 
+    parameters {
+        string(name: 'BRANCH_NAME', defaultValue: 'master', description: 'Branch to build')
+        choice(name: 'ENVIRONMENT', choices: ['dev', 'stage', 'prod'], description: 'Environment to deploy')
+        booleanParam(name: 'RUN_TESTS', defaultValue: true, description: 'Run tests?')
+    }
+
     environment {
         // Определение переменных среды, используемых во всем пайплайне
         MAVEN_HOME = '/usr/share/apache-maven'
@@ -64,6 +70,8 @@ pipeline {
 
             always {
                 echo 'Очистка после сборки...'
+                sh 'pwd'
+                sh 'ls -l'
                 junit '**/target/surefire-reports/*.xml' // для Maven
                 junit '**/test-output/*.xml' // для TestNG
                 //cleanWs() // Очистка workspace после завершения работы
