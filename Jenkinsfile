@@ -47,7 +47,7 @@ pipeline {
         stage('Сборка') {
             steps {
                 echo 'Сборка приложения...'
-                sh '${MAVEN_HOME}/bin/mvn clean install -DskipTests'
+                sh 'mvn clean install -DskipTests'
             }
         }
 
