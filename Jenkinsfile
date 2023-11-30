@@ -10,21 +10,6 @@ pipeline {
 
     stages {
 
-            stage('Checkout') {
-                steps {
-                    checkout scm
-                }
-            }
-
-            stage('Проверка директории') {
-                steps {
-                    script {
-                        sh 'pwd'
-                        sh 'ls -l'
-                    }
-                }
-            }
-
         stage('Инициализация') {
             steps {
                 echo 'Проверка версии Java...'
@@ -41,6 +26,12 @@ pipeline {
 
                 echo 'Информация о ветке и коммите...'
                 sh 'echo "Сборка запущена с коммита: ${GIT_COMMIT}"'
+            }
+        }
+
+        stage('Checkout') {
+            steps {
+                checkout scm
             }
         }
 
