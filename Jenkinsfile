@@ -7,6 +7,7 @@ pipeline {
         JAVA_HOME = '/usr/lib/jvm/java-11-amazon-corretto.x86_64'
         PROFILE_NAME = 'AdvancedCalculatorV2Test' // Значение по умолчанию
     }
+
     stage('Checkout') {
         steps {
             checkout scm
