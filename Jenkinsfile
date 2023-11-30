@@ -1,4 +1,6 @@
-def sonarData = null
+def bugs = null
+def codeSmells = null
+def vulnerabilities = null
 
 pipeline {
     agent any // Пайплайн может запускаться на любом доступном агенте
@@ -79,8 +81,13 @@ pipeline {
         stage('Get SonarQube Data') {
             steps {
                 script {
-                    sonarData = sh(script: "curl -u 42c4b797b4d3139192c0f73db24c36a70b8a11aa: 'http://3.82.161.17:9000/api/measures/component?component=AdvancedCalculator&metricKeys=bugs,vulnerabilities,code_smells'", returnStdout: true).trim()
-                    // Обработайте sonarData для извлечения необходимой информации
+                    def sonarData = sh(script: "curl -u 42c4b797b4d3139192c0f73db24c36a70b8a11aa: 'http://3.82.161.17:9000/api/measures/component?component=AdvancedCalculator&metricKeys=bugs,vulnerabilities,code_smells'", returnStdout: true).trim()
+                    def jsonResponse = new groovy.json.JsonSlurper().parseText(sonarData)
+                    def measures = jsonResponse.component.measures
+
+                    bugs = measures.find { it.metric == 'bugs' }?.value ?: 'Нет данных'
+                    codeSmells = measures.find { it.metric == 'code_smells' }?.value ?: 'Нет данных'
+                    vulnerabilities = measures.find { it.metric == 'vulnerabilities' }?.value ?: 'Нет данных'
                 }
             }
         }
@@ -105,10 +112,12 @@ pipeline {
                 script {
                     echo 'Сборка успешно завершена.'
                     def message = "Успешно: ${env.JOB_NAME} [${env.BUILD_NUMBER}] \n" +
-                                                  "Ссылка: ${env.BUILD_URL} \n" +
-                                                  "Длительность: ${currentBuild.durationString} \n" +
-                                                  "Результаты сборки: ${currentBuild.currentResult} \n" +
-                                                  "Анализ SonarQube: ${sonarData}"
+                                  "Ссылка: ${env.BUILD_URL} \n" +
+                                  "Длительность: ${currentBuild.durationString} \n" +
+                                  "Результаты сборки: ${currentBuild.currentResult} \n" +
+                                  "Bugs: ${bugs}\n" +
+                                  "Code Smells: ${codeSmells}\n" +
+                                  "Vulnerabilities: ${vulnerabilities}
                     sh "curl -s -X POST https://api.telegram.org/bot6791948017:AAE9Thrt41vGXMglNFmR9WZbJ2O9SNX-1dE/sendMessage -d chat_id=671562924 -d text='${message}'"
                 }
             }
