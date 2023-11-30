@@ -40,14 +40,13 @@ pipeline {
                 echo 'Сборка приложения...'
                 sh 'pwd'
                 sh 'ls -l'
-                sh 'mvn clean install -DskipTests'
+                sh 'mvn -s /settings.xml clean install -DskipTests'
             }
         }
 
         stage('Тестирование') {
             steps {
                 echo 'Запуск тестов...'
-                //sh '${MAVEN_HOME}/bin/mvn test'
 
                 script {
                     if (env.BRANCH_NAME != 'main') {
@@ -73,16 +72,17 @@ pipeline {
                     echo 'Сборка успешно завершена.'
                     def message = "Успешно: ${env.JOB_NAME} [${env.BUILD_NUMBER}] \n" +
                                                   "Ссылка: ${env.BUILD_URL} \n" +
-                                                  "Длительность: ${currentBuild.durationString} \n"
+                                                  "Длительность: ${currentBuild.durationString}"
                     sh "curl -s -X POST https://api.telegram.org/bot6791948017:AAE9Thrt41vGXMglNFmR9WZbJ2O9SNX-1dE/sendMessage -d chat_id=671562924 -d text='${message}''"
                 }
             }
             failure {
                 script {
                     echo 'Сборка не удалась.'
+                    sh 'mvn dependency:purge-local-repository -DreResolve=false'
                     def message = "Ошибка: ${env.JOB_NAME} [${env.BUILD_NUMBER}] \n" +
                                                   "Причина: ${currentBuild.currentResult} \n" +
-                                                  "Ссылка: ${env.BUILD_URL} \n"
+                                                  "Ссылка: ${env.BUILD_URL}"
                     sh "curl -s -X POST https://api.telegram.org/bot6791948017:AAE9Thrt41vGXMglNFmR9WZbJ2O9SNX-1dE/sendMessage -d chat_id=671562924 -d text='${message}'"
                 }
             }
