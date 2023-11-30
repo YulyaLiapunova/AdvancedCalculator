@@ -117,7 +117,7 @@ pipeline {
                                   "Результаты сборки: ${currentBuild.currentResult} \n" +
                                   "Bugs: ${bugs}\n" +
                                   "Code Smells: ${codeSmells}\n" +
-                                  "Vulnerabilities: ${vulnerabilities}
+                                  "Vulnerabilities: ${vulnerabilities}"
                     sh "curl -s -X POST https://api.telegram.org/bot6791948017:AAE9Thrt41vGXMglNFmR9WZbJ2O9SNX-1dE/sendMessage -d chat_id=671562924 -d text='${message}'"
                 }
             }
