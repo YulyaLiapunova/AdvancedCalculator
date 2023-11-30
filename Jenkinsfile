@@ -47,6 +47,8 @@ pipeline {
         stage('Сборка') {
             steps {
                 echo 'Сборка приложения...'
+                sh 'pwd'
+                sh 'ls -l'
                 sh 'mvn clean install -DskipTests'
             }
         }
