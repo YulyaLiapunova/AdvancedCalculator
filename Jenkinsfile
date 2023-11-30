@@ -64,6 +64,16 @@ pipeline {
             }
         }
 
+        stage('Анализ кода') {
+                    steps {
+                        echo 'Анализ качества кода...'
+                        sh 'mvn sonar:sonar \
+                              -Dsonar.projectKey=AdvancedCalculator \
+                              -Dsonar.host.url=http://3.82.161.17:9000 \
+                              -Dsonar.login=42c4b797b4d3139192c0f73db24c36a70b8a11aa'
+                    }
+        }
+
     }
 
     post {
