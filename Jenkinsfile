@@ -1,3 +1,5 @@
+def sonarData = null
+
 pipeline {
     agent any // Пайплайн может запускаться на любом доступном агенте
 
@@ -77,7 +79,7 @@ pipeline {
         stage('Get SonarQube Data') {
             steps {
                 script {
-                    def sonarData = sh(script: "curl -u 42c4b797b4d3139192c0f73db24c36a70b8a11aa: 'http://3.82.161.17:9000/api/measures/component?component=AdvancedCalculator&metricKeys=bugs,vulnerabilities,code_smells'", returnStdout: true).trim()
+                    sonarData = sh(script: "curl -u 42c4b797b4d3139192c0f73db24c36a70b8a11aa: 'http://3.82.161.17:9000/api/measures/component?component=AdvancedCalculator&metricKeys=bugs,vulnerabilities,code_smells'", returnStdout: true).trim()
                     // Обработайте sonarData для извлечения необходимой информации
                 }
             }
