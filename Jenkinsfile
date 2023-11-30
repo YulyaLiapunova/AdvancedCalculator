@@ -72,7 +72,7 @@ pipeline {
                 echo 'Очистка после сборки...'
                 sh 'pwd'
                 sh 'ls -l'
-                junit '**/target/surefire-reports/*.xml' // для Maven
+                //junit '**/target/surefire-reports/*.xml' // для Maven
                 junit '**/test-output/*.html' // для TestNG
                 //cleanWs() // Очистка workspace после завершения работы
             }
