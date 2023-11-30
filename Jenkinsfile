@@ -44,14 +44,15 @@ pipeline {
         stage('Сборка') {
             steps {
                 echo 'Сборка приложения...'
-                sh '${MAVEN_HOME}/bin/mvn clean package'
+                //sh '${MAVEN_HOME}/bin/mvn clean package'
+                sh '${MAVEN_HOME}/bin/mvn -f /var/lib/jenkins/workspace/Project@2/pom.xml clean install'
             }
         }
 
         stage('Тестирование') {
             steps {
                 echo 'Запуск тестов...'
-                sh '${MAVEN_HOME}/bin/mvn test'
+                sh '${MAVEN_HOME}/bin/mvn -f /var/lib/jenkins/workspace/Project@2/pom.xml test'
             }
         }
 
