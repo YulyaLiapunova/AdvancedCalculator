@@ -19,8 +19,8 @@ pipeline {
                 //echo 'Подготовка конфигурационных файлов...'
                 //sh 'cp -r ./config $WORKSPACE/config'
 
-                echo 'Установка зависимостей...'
-                sh '${MAVEN_HOME}/bin/mvn -Pprofile-name clean dependency:resolve'
+                //echo 'Установка зависимостей...'
+                //sh '${MAVEN_HOME}/bin/mvn -Pprofile-name clean dependency:resolve'
 
                 echo 'Информация о ветке и коммите...'
                 sh 'echo "Сборка запущена с коммита: ${GIT_COMMIT}"'
