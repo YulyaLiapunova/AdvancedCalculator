@@ -16,6 +16,7 @@ public class AdvancedCalculatorJUnitTest {
 
     @BeforeEach
     public void setup() {
+        System.out.println("Starting tests for JUnit");
         calculator = new main.java.AdvancedCalculator();
     }
 

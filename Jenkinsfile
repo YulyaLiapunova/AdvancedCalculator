@@ -5,6 +5,7 @@ pipeline {
         // Определение переменных среды, используемых во всем пайплайне
         MAVEN_HOME = '/usr/share/apache-maven'
         JAVA_HOME = '/usr/lib/jvm/java-11-amazon-corretto.x86_64'
+        PROFILE_NAME = 'AdvancedCalculatorV2Test' // Значение по умолчанию
     }
 
     stages {
@@ -27,32 +28,9 @@ pipeline {
             }
         }
 
-        stage('Проверка директории') {
-            steps {
-                script {
-                    // Вывод текущего рабочего каталога
-                    echo "Текущий рабочий каталог:"
-                    sh 'pwd'
-
-                    // Вывод содержимого текущего рабочего каталога
-                    echo "Содержимое рабочего каталога:"
-                    sh 'ls -lah'
-                }
-            }
-        }
-
-        stage('Show Java version') {
-            steps {
-                sh 'java -version'
-                sh 'javac -version'
-                sh 'echo $JAVA_HOME'
-            }
-        }
-
         stage('Сборка') {
             steps {
                 echo 'Сборка приложения...'
-                //sh '${MAVEN_HOME}/bin/mvn clean package'
                 sh '${MAVEN_HOME}/bin/mvn -f /var/lib/jenkins/workspace/Project@2/pom.xml clean install'
             }
         }
@@ -60,9 +38,18 @@ pipeline {
         stage('Тестирование') {
             steps {
                 echo 'Запуск тестов...'
-                sh '${MAVEN_HOME}/bin/mvn -f /var/lib/jenkins/workspace/Project@2/pom.xml test'
+                //sh '${MAVEN_HOME}/bin/mvn -f /var/lib/jenkins/workspace/Project@2/pom.xml test'
+
+                script {
+                    if (env.BRANCH_NAME != 'main') {
+                        PROFILE_NAME = 'AdvancedCalculatorJUnitTest'
+                    }
+                    sh '${MAVEN_HOME}/bin/mvn -f /var/lib/jenkins/workspace/Project@2/pom.xml test -P${PROFILE_NAME}'
+                    //sh "mvn clean test -P${PROFILE_NAME}"
+                }
             }
         }
+
 
         stage('Анализ кода') {
             steps {

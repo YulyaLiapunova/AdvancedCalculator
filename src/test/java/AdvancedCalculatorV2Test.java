@@ -31,6 +31,7 @@ public class AdvancedCalculatorV2Test {
     }
     @BeforeMethod
     public void setup() {
+        System.out.println("Starting tests for testNg");
         calculator = new main.java.AdvancedCalculator();
     }
 

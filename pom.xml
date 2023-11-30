@@ -29,22 +29,36 @@
 
     <profiles>
         <profile>
-            <id>profile-name</id>
-            <!--properties>
-                <!- Свойства профиля -->
-            <!--/properties>
-            <dependencies>
-                <!- Зависимости профиля -->
-            <!--/dependencies>
+            <id>AdvancedCalculatorJUnitTest</id>
             <build>
                 <plugins>
-                    <!- Плагины профиля -->
-                <!--/plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <includes>
+                                <include>**/AdvancedCalculatorJUnitTest.java</include>
+                            </includes>
+                        </configuration>
+                    </plugin>
+                </plugins>
             </build>
-            <activation>
-                <activeByDefault>false</activeByDefault>
-                <!- Другие условия активации -->
-            <!--/activation-->
+        </profile>
+        <profile>
+            <id>AdvancedCalculatorV2Test</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <configuration>
+                            <includes>
+                                <include>**/AdvancedCalculatorV2Test.java</include>
+                            </includes>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 
