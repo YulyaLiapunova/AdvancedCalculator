@@ -71,13 +71,19 @@ pipeline {
             success {
                 script {
                     echo 'Сборка успешно завершена.'
-                    sh "curl -s -X POST https://api.telegram.org/bot6791948017:AAE9Thrt41vGXMglNFmR9WZbJ2O9SNX-1dE/sendMessage -d chat_id=671562924 -d text='Сборка успешно завершена: ${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+                    def message = "Успешно: ${env.JOB_NAME} [${env.BUILD_NUMBER}] \n" +
+                                                  "Ссылка: ${env.BUILD_URL} \n" +
+                                                  "Длительность: ${currentBuild.durationString} \n"
+                    sh "curl -s -X POST https://api.telegram.org/bot6791948017:AAE9Thrt41vGXMglNFmR9WZbJ2O9SNX-1dE/sendMessage -d chat_id=671562924 -d text='${message}''"
                 }
             }
             failure {
                 script {
                     echo 'Сборка не удалась.'
-                    sh "curl -s -X POST https://api.telegram.org/bot6791948017:AAE9Thrt41vGXMglNFmR9WZbJ2O9SNX-1dE/sendMessage -d chat_id=671562924 -d text='Ошибка сборки: ${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+                    def message = "Ошибка: ${env.JOB_NAME} [${env.BUILD_NUMBER}] \n" +
+                                                  "Причина: ${currentBuild.currentResult} \n" +
+                                                  "Ссылка: ${env.BUILD_URL} \n"
+                    sh "curl -s -X POST https://api.telegram.org/bot6791948017:AAE9Thrt41vGXMglNFmR9WZbJ2O9SNX-1dE/sendMessage -d chat_id=671562924 -d text='${message}'"
                 }
             }
             unstable {
