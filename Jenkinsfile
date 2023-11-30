@@ -41,6 +41,14 @@ pipeline {
             }
         }
 
+        stage('Show Java version') {
+            steps {
+                sh 'java -version'
+                sh 'javac -version'
+                sh 'echo $JAVA_HOME'
+            }
+        }
+
         stage('Сборка') {
             steps {
                 echo 'Сборка приложения...'
