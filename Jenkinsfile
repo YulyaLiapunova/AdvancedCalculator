@@ -40,7 +40,7 @@ pipeline {
                 echo 'Сборка приложения...'
                 sh 'pwd'
                 sh 'ls -l'
-                sh 'mvn -s /settings.xml clean install -DskipTests'
+                sh 'mvn -s settings.xml clean install -DskipTests'
             }
         }
 
