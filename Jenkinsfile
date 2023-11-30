@@ -8,22 +8,23 @@ pipeline {
         PROFILE_NAME = 'AdvancedCalculatorV2Test' // Значение по умолчанию
     }
 
-    stage('Checkout') {
-        steps {
-            checkout scm
-        }
-    }
-
-    stage('Проверка директории') {
-        steps {
-            script {
-                sh 'pwd'
-                sh 'ls -l'
-            }
-        }
-    }
-
     stages {
+
+            stage('Checkout') {
+                steps {
+                    checkout scm
+                }
+            }
+
+            stage('Проверка директории') {
+                steps {
+                    script {
+                        sh 'pwd'
+                        sh 'ls -l'
+                    }
+                }
+            }
+
         stage('Инициализация') {
             steps {
                 echo 'Проверка версии Java...'
