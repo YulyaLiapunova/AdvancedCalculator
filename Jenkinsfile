@@ -46,7 +46,7 @@ pipeline {
                 echo 'Сборка приложения...'
                 sh 'pwd'
                 sh 'ls -l'
-                sh 'mvn clean install -DskipTests'
+                sh 'mvn clean install'
             }
         }
 
@@ -73,7 +73,7 @@ pipeline {
                 sh 'pwd'
                 sh 'ls -l'
                 junit '**/target/surefire-reports/*.xml' // для Maven
-                junit '**/test-output/*.xml' // для TestNG
+                junit '**/test-output/*.html' // для TestNG
                 //cleanWs() // Очистка workspace после завершения работы
             }
 
