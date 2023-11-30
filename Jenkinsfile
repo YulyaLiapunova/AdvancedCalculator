@@ -75,8 +75,8 @@ pipeline {
                 sh 'ls -la test-output/' // Проверьте папку target для Maven
                 sh 'ls -la target/surefire-reports/' // Проверьте папку target для Maven
                 sh 'ls -la' // Проверьте корневой каталог проекта
-                //junit '**/target/surefire-reports/*.xml' // для Maven
-                junit '/test-output/*.html' // для TestNG
+                junit '**/target/surefire-reports/testng-results.xml' // для Maven
+                junit '/test-output/emailable-report.html' // для TestNG
                 //cleanWs() // Очистка workspace после завершения работы
             }
 
