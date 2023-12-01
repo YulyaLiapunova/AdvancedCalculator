@@ -99,9 +99,8 @@ pipeline {
                 // Deploying to the server
                 echo 'Deploying..'
                 sshagent(['ssh-key']) { // SSH Key credential ID in Jenkins
-                    cd "/var/lib/jenkins/workspace/Calc"
                     // Copy files to the server
-                    sh "scp -o StrictHostKeyChecking=no . ${SSH_USER}@${SERVER_IP}:~/."
+                    sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Calc ${SSH_USER}@${SERVER_IP}:~/."
                 }
             }
         }
