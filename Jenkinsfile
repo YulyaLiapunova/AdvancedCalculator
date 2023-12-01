@@ -98,7 +98,7 @@ pipeline {
            steps {
                // Deploying to the server
                echo 'Deploying..'
-               sh 'scp -i /home/ec2-user/Docker.pem -r /var/lib/jenkins/workspace/Calc ${SSH_USER}@${SERVER_IP}:~/.'
+               sh 'sshpass -p "ubuntu" scp -r /var/lib/jenkins/workspace/Calc ${SSH_USER}@${SERVER_IP}:~/.'
            }
         }
     }
