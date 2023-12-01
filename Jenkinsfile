@@ -100,7 +100,7 @@ pipeline {
                 echo 'Deploying..'
                 sshagent(['ssh-key']) { // SSH Key credential ID in Jenkins
                     // Copy files to the server
-                    sh "scp -i ~/Docker.pem /var/lib/jenkins/workspace/Calc@tmp ${SSH_USER}@${SERVER_IP}:~/."
+                    sh "scp -i /home/ec2-user/Docker.pem /var/lib/jenkins/workspace/Calc@tmp ${SSH_USER}@${SERVER_IP}:~/."
                 }
             }
         }
