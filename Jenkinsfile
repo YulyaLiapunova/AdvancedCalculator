@@ -16,7 +16,7 @@ pipeline {
         MAVEN_HOME = '/usr/share/apache-maven'
         JAVA_HOME = '/usr/lib/jvm/java-11-amazon-corretto.x86_64'
         PROFILE_NAME = 'AdvancedCalculatorV2Test' // Значение по умолчанию
-        SERVER_IP = "54.198.236.190"
+        SERVER_IP = "3.91.10.197"
         SSH_USER = "ubuntu"
     }
 
