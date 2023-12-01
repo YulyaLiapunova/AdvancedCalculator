@@ -1,3 +1,5 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.*;
 
 import static org.testng.Assert.assertEquals;
@@ -7,6 +9,8 @@ public class AdvancedCalculatorV2Test {
 
     long startTime, endTime;
     private main.java.AdvancedCalculator calculator;
+    private static final Logger logger = LogManager.getLogger(main.java.AdvancedCalculator.class);
+
 
 //    @BeforeClass
 //    public void beforeClass() {
@@ -27,11 +31,11 @@ public class AdvancedCalculatorV2Test {
     public void endTime() {
         endTime = System.currentTimeMillis();
         long elapsedTime = endTime - startTime;
-        System.out.println("Test executed in: " + elapsedTime + " milliseconds");
+        logger.info("Test executed in: " + elapsedTime + " milliseconds");
     }
     @BeforeMethod
     public void setup() {
-        System.out.println("Starting tests for testNg");
+        logger.info("Starting tests for testNg");
         calculator = new main.java.AdvancedCalculator();
     }
 
@@ -52,7 +56,7 @@ public class AdvancedCalculatorV2Test {
 
     @Test(dataProvider = "additionDataProvider")
     public void testAddition(double a, double b, double expected) {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         assertEquals(calculator.add(a, b), expected);
     }
 
@@ -68,7 +72,7 @@ public class AdvancedCalculatorV2Test {
 
     @Test(dataProvider = "additionExceptionDataProvider", expectedExceptions = ArithmeticException.class, expectedExceptionsMessageRegExp = "Overflow in add")
     public void testExceptionOnAddition(double a, double b) {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         calculator.add(a, b);
     }
 
@@ -90,13 +94,13 @@ public class AdvancedCalculatorV2Test {
 
     @Test(dataProvider = "subtractionDataProvider")
     public void testSubtraction(double a, double b, double expected) {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         assertEquals(calculator.subtract(a, b), expected, 0.000001);
     }
 
     @Test
     public void testSubtractionWithNaN() {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         assertEquals(calculator.subtract(Double.NaN, 5), Double.NaN);
     }
 
@@ -111,7 +115,7 @@ public class AdvancedCalculatorV2Test {
 
     @Test(dataProvider = "subtractionExceptionDataProvider", expectedExceptions = ArithmeticException.class, expectedExceptionsMessageRegExp = "Overflow in subtract")
     public void testExceptionOnSubtraction(double a, double b) {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         calculator.subtract(a, b);
     }
 
@@ -130,7 +134,7 @@ public class AdvancedCalculatorV2Test {
 
     @Test(dataProvider = "multiplicationDataProvider")
     public void testMultiplication(double a, double b, double expected) {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         assertEquals(calculator.multiply(a, b), expected, 0.000001);
     }
 
@@ -144,7 +148,7 @@ public class AdvancedCalculatorV2Test {
 
     @Test(dataProvider = "multiplicationExceptionDataProvider", expectedExceptions = ArithmeticException.class, expectedExceptionsMessageRegExp = "Overflow in multiply")
     public void testExceptionOnMultiplication(double a, double b) {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         calculator.multiply(a, b);
     }
 
@@ -163,19 +167,19 @@ public class AdvancedCalculatorV2Test {
 
     @Test(dataProvider = "divisionDataProvider")
     public void testDivision(double a, double b, double expected) {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         assertEquals(calculator.divide(a, b), expected, 0.000001);
     }
 
     @Test(expectedExceptions = ArithmeticException.class, expectedExceptionsMessageRegExp = "Division by zero is not allowed")
     public void testDivisionByZero() {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         calculator.divide(1, 0);
     }
 
     @Test(expectedExceptions = ArithmeticException.class, expectedExceptionsMessageRegExp = "Overflow or invalid operation in divide")
     public void testDivideOverflow() {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         calculator.divide(Double.MAX_VALUE, Double.MIN_VALUE);
     }
 
@@ -197,13 +201,13 @@ public class AdvancedCalculatorV2Test {
 
     @Test(dataProvider = "powerDataProvider")
     public void testPower(double base, double exponent, double expected) {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         assertEquals(calculator.power(base, exponent), expected, 1e290);
     }
 
     @Test(expectedExceptions = ArithmeticException.class, expectedExceptionsMessageRegExp = "Overflow in power operation")
     public void testPowerOverflow() {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         double base = 10.0;
         double exponent = 309.0;
         calculator.power(base, exponent);
@@ -211,7 +215,7 @@ public class AdvancedCalculatorV2Test {
 
     @Test(expectedExceptions = ArithmeticException.class, expectedExceptionsMessageRegExp = "Invalid operation in power")
     public void testPowerInvalidOperation() {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         double base = -4.0;
         double exponent = 0.5;
         calculator.power(base, exponent);
@@ -231,14 +235,14 @@ public class AdvancedCalculatorV2Test {
 
     @Test(dataProvider = "sqrtDataProvider")
     public void testSqrt(double input, double expected) {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         assertEquals(calculator.sqrt(input), expected, 0.000001);
     }
 
     @Test(expectedExceptions = ArithmeticException.class,
             expectedExceptionsMessageRegExp = "Cannot calculate the square root of a negative number")
     public void testSqrtNegativeNumber() {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         calculator.sqrt(-4.0);
     }
 
@@ -254,19 +258,19 @@ public class AdvancedCalculatorV2Test {
 
     @Test(dataProvider = "factorialDataProvider")
     public void testFactorial(int input, double expected) {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         assertEquals(calculator.factorial(input), expected, 0.00001);
     }
 
     @Test(expectedExceptions = IllegalArgumentException.class, expectedExceptionsMessageRegExp = "Factorial of negative numbers is not defined")
     public void testFactorialOfNegativeNumber() {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         calculator.factorial(-5);
     }
 
     @Test(expectedExceptions = ArithmeticException.class, expectedExceptionsMessageRegExp = "Factorial value is too large")
     public void testFactorialOfVeryLargeNumber() {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         calculator.factorial(1000);
     }
 
@@ -281,7 +285,7 @@ public class AdvancedCalculatorV2Test {
 
     @Test(dataProvider = "logDataProvider")
     public void testLog(double input, double expected) {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         assertEquals(calculator.log(input), expected, 0.000001);
     }
 
@@ -295,7 +299,7 @@ public class AdvancedCalculatorV2Test {
 
     @Test(dataProvider = "logExceptionDataProvider", expectedExceptions = ArithmeticException.class, expectedExceptionsMessageRegExp = "Logarithm of non-positive values is not defined")
     public void testLogExceptions(double input) {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         calculator.log(input);
     }
 
@@ -309,7 +313,7 @@ public class AdvancedCalculatorV2Test {
 
     @Test(dataProvider = "logComparisonDataProvider")
     public void testLogComparison(double input, boolean expectedResult) {
-        System.out.println("Running testMethod1 in thread: " + Thread.currentThread().getName());
+        logger.info("Running testMethod1 in thread: " + Thread.currentThread().getName());
         if (expectedResult) {
             assertTrue(calculator.log(input) > 0);
         } else {

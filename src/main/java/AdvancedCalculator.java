@@ -1,8 +1,13 @@
 package main.java;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Scanner;
 
 public class AdvancedCalculator {
+    private static final Logger logger = LogManager.getLogger(main.java.AdvancedCalculator.class);
+
     public double add(double a, double b) {
         double result = a + b;
 
@@ -97,7 +102,7 @@ public class AdvancedCalculator {
         AdvancedCalculator calculator = new AdvancedCalculator();
 
         while (true) {
-            System.out.println("Введите строку (для выхода введите 'exit'):");
+            logger.info("Введите строку (для выхода введите 'exit'):");
             String input = scanner.nextLine();
 
             if ("exit".equalsIgnoreCase(input)) {
@@ -121,6 +126,7 @@ public class AdvancedCalculator {
                             break;
                         case "*":
                             result = calculator.subtract(num1, num2);
+                            break;
                         case "/":
                             result = calculator.subtract(num1, num2);
                             break;
@@ -128,20 +134,20 @@ public class AdvancedCalculator {
                             result = calculator.subtract(num1, num2);
                             break;
                         default:
-                            System.out.println("Неизвестная операция.");
+                            logger.info("Неизвестная операция.");
                             continue;
                     }
 
-                    System.out.println("Результат: " + result);
+                    logger.info("Результат: " + result);
                 } catch (NumberFormatException e) {
-                    System.out.println("Ошибка при разборе чисел.");
+                    logger.info("Ошибка при разборе чисел.");
                 }
             } else {
-                System.out.println("Неверный формат ввода.");
+                logger.info("Неверный формат ввода.");
             }
         }
 
         scanner.close();
-        System.out.println("Программа завершена.");
+        logger.info("Программа завершена.");
     }
 }
