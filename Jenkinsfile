@@ -94,16 +94,16 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                // Deploying to the server
-                echo 'Deploying..'
-                sshagent(['ssh-key']) { // SSH Key credential ID in Jenkins
-                    // Copy files to the server
-                    sh "scp -i /home/ec2-user/Docker.pem /var/lib/jenkins/workspace/Calc@tmp ${SSH_USER}@${SERVER_IP}:~/."
-                }
-            }
-        }
+        //stage('Deploy') {
+        //    steps {
+        //        // Deploying to the server
+        //        echo 'Deploying..'
+        //        sshagent(['ssh-key']) { // SSH Key credential ID in Jenkins
+        //           // Copy files to the server
+        //            sh "scp -i /home/ec2-user/Docker.pem /var/lib/jenkins/workspace/Calc@tmp ${SSH_USER}@${SERVER_IP}:~/."
+        //        }
+        //    }
+        //}
     }
 
     post {
