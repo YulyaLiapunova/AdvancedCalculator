@@ -16,6 +16,8 @@ pipeline {
         MAVEN_HOME = '/usr/share/apache-maven'
         JAVA_HOME = '/usr/lib/jvm/java-11-amazon-corretto.x86_64'
         PROFILE_NAME = 'AdvancedCalculatorV2Test' // Значение по умолчанию
+        SERVER_IP = "54.198.236.190"
+        SSH_USER = "ubuntu"
     }
 
     stages {
@@ -92,6 +94,16 @@ pipeline {
             }
         }
 
+        stage('Deploy') {
+            steps {
+                // Deploying to the server
+                echo 'Deploying..'
+                sshagent(['ssh-key']) { // SSH Key credential ID in Jenkins
+                    // Copy files to the server
+                    sh "scp -o StrictHostKeyChecking=no . ${SSH_USER}@${SERVER_IP}:~/."
+                }
+            }
+        }
     }
 
     post {
